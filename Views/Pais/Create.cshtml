@@ -1,0 +1,29 @@
+﻿@model Projeto_Login.Models.Pais
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastre seu País</h1>
+<hr />
+<div class="caixa">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PaisNome" class="control-label"></label>
+                <input asp-for="PaisNome" class="form-control" />
+                <span asp-validation-for="PaisNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Projeto_Login.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastre um Produto</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>
+<div class="caixa">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoQuantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipoproduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fornecedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoQuantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipoproduto.TipoProdutoDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fornecedor.FornecedorNome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Projeto_Login.Models.EntradaProduto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastre a entrada do produto</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>
+<div class="caixa">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntradaProdutoData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntradaProdutoQuantidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Produto.ProdutoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntradaProdutoData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntradaProdutoQuantidade)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

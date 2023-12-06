@@ -1,0 +1,62 @@
+html {
+    font-size: 14px;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        background-color: #A6A7E1;
+        color:white;
+    }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {    
+    background-color: #A6A7E1 !important;
+    color: white;
+}
+.logo-joias {
+    width: 185px;
+    height: 185px;
+    
+}
+
+.linha {
+    background-color: #6768AB;
+    height: 150px;
+    width: 100%;
+}
+.centro {
+    color: white;
+    background-color: #A6A7E1;
+    width: 100%;
+    margin-top: 60px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.caixa {
+    width: 50%;
+    background-color: #6768AB;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    height: fit-content;
+}
+input.btn.btn-primary {
+    background-color: #393939;
+    border: none;
+    margin-top: 5%;
+}
+
+.btn:hover {
+    background-color: #727071 !important;
+}
